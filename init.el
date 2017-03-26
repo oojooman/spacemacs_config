@@ -186,7 +186,7 @@ The purpose of this function is to easily construct id:-links to org-mode items.
   (global-set-key "\C-ca" 'org-agenda)
   (global-set-key "\C-cb" 'org-iswitchb)
 
-  ;; (setq org-agenda-files (list "~/Dropbox/org/"))
+  (setq org-agenda-files (list "~/Dropbox/org/"))
 
   (setq visual-line-mode t)
   (setq org-indent-mode t)
@@ -262,9 +262,6 @@ The purpose of this function is to easily construct id:-links to org-mode items.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(js2-strict-missing-semi-warning nil)
- '(org-agenda-files
-   (quote
-    ("/home/mischa/Dropbox/org/business.org" "/home/mischa/Dropbox/org/comp.org" "/home/mischa/Dropbox/org/comp_kb.org" "/home/mischa/Dropbox/org/dreikr.org" "/home/mischa/Dropbox/org/dreikr_kb.org" "/home/mischa/Dropbox/org/emacs_org_kb.org" "/home/mischa/Dropbox/org/flashklip.org" "/home/mischa/Dropbox/org/gamestoun.org" "/home/mischa/Dropbox/org/health.org" "/home/mischa/Dropbox/org/japanese.org" "/home/mischa/Dropbox/org/korean.org" "/home/mischa/Dropbox/org/linux.org" "/home/mischa/Dropbox/org/list.org" "/home/mischa/Dropbox/org/oojooman.org" "/home/mischa/Dropbox/org/org.org" "/home/mischa/Dropbox/org/private.org" "/home/mischa/Dropbox/org/programming.org" "/home/mischa/Dropbox/org/projects.org" "/home/mischa/Dropbox/org/refile.org" "/home/mischa/Dropbox/org/rocky.org" "/home/mischa/Dropbox/org/sysop.org" "/home/mischa/Dropbox/org/techshare.org")))
  '(org-agenda-sorting-strategy
    (quote
     ((agenda todo-state-up time-up priority-down category-keep)

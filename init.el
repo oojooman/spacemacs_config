@@ -60,7 +60,7 @@ values."
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Ubuntu Mono"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -152,6 +152,16 @@ The purpose of this function is to easily construct id:-links to org-mode items.
     (mapc (lambda (x) (if (eq x 'xft) (setq xft-supported t)))
           (frame-parameter frame 'font-backend))
     xft-supported))
+
+(when (xftp)
+  (let ((fontset "fontset-default"))
+    (set-fontset-font fontset 'latin
+                      '("Ubuntu Mono" . "unicode-bmp"))
+    (set-fontset-font fontset 'hangul
+                      '("NanumGothic" . "unicode-bmp"))
+    (set-face-attribute 'default nil
+                        :font fontset
+                        :height 110)))
 
 (defun dotspacemacs/user-config ()
 

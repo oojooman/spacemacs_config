@@ -10,6 +10,7 @@
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     erlang
      yaml
      python
      csv
@@ -151,16 +152,6 @@ The purpose of this function is to easily construct id:-links to org-mode items.
     (mapc (lambda (x) (if (eq x 'xft) (setq xft-supported t)))
           (frame-parameter frame 'font-backend))
     xft-supported))
-
-(when (xftp)
-  (let ((fontset "fontset-default"))
-    (set-fontset-font fontset 'latin
-                      '("DejaVu Sans Mono" . "unicode-bmp"))
-    (set-fontset-font fontset 'hangul
-                      '("NanumGothic" . "unicode-bmp"))
-    (set-face-attribute 'default nil
-                        :font fontset
-                        :height 110)))
 
 (defun dotspacemacs/user-config ()
 

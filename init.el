@@ -32,6 +32,7 @@
      ;; version-control
      gnus
      finance
+     music
      )
    dotspacemacs-additional-packages '()
    dotspacemacs-frozen-packages '()
@@ -254,6 +255,11 @@ The purpose of this function is to easily construct id:-links to org-mode items.
           ))
       )
     )
+  (add-to-list 'auto-mode-alist '("\\.dat\\'" . ledger-mode))
+
+  (setq emms-player-mpd-server-port "12010") ;; example port
+  (emms-player-mpd-connect)
+
   )
 
 

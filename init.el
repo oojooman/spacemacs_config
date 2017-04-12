@@ -33,8 +33,9 @@
      gnus
      finance
      music
+     emoji
      )
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(color-theme-solarized)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only))
@@ -60,8 +61,8 @@ values."
    dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("Ubuntu Mono"
-                               :size 14
+   dotspacemacs-default-font '("DejaVu Sans Mono"
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -157,7 +158,7 @@ The purpose of this function is to easily construct id:-links to org-mode items.
 (when (xftp)
   (let ((fontset "fontset-default"))
     (set-fontset-font fontset 'latin
-                      '("Ubuntu Mono" . "unicode-bmp"))
+                      '("DejaVu Sans Mono" . "unicode-bmp"))
     (set-fontset-font fontset 'hangul
                       '("NanumGothic" . "unicode-bmp"))
     (set-face-attribute 'default nil
@@ -165,6 +166,9 @@ The purpose of this function is to easily construct id:-links to org-mode items.
                         :height 110)))
 
 (defun dotspacemacs/user-config ()
+  (set-terminal-parameter nil 'background-mode 'light)
+  (set-frame-parameter nil 'background-mode 'light)
+  (spacemacs/load-theme 'solarized)
 
   (global-set-key (kbd "<XF86HomePage>") 'keyboard-quit)
 
@@ -288,17 +292,3 @@ The purpose of this function is to easily construct id:-links to org-mode items.
    (quote
     (csv-mode tern js2-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js-doc coffee-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode ob-elixir flycheck-mix alchemist company elixir-mode smeargle orgit org-projectile pcache org-present org org-pomodoro alert log4e gntp org-download mmm-mode markdown-toc markdown-mode magit-gitflow htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
  '(powerline-text-scale-factor 1.0))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-date ((t (:foreground "#7590db" :height 1.0))))
- '(org-agenda-date-today ((t (:inherit bold :foreground "#4f97d7" :height 1.0))))
- '(org-agenda-done ((t (:foreground "#86dc2f" :height 1.0))))
- '(org-document-title ((t (:inherit bold :foreground "#bc6ec5" :underline t :height 1.0))))
- '(org-level-1 ((t (:inherit bold :foreground "#4f97d7" :height 1.0))))
- '(org-level-2 ((t (:inherit nil :foreground "#2d9574" :height 1.0))))
- '(org-level-3 ((t (:foreground "#67b11d" :weight normal :height 1.0))))
- '(org-scheduled-today ((t (:foreground "#bc6ec5" :height 1.0))))
- '(org-tag ((t (:weight light)))))
